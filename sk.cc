@@ -50,26 +50,17 @@
 #include "include/core/SkSurface.h"
 
 void draw(SkCanvas *canvas) {
-	const SkScalar scale = 256.0f;
-	// const SkScalar R = 0.45f * scale;
-	// const SkScalar TAU = 6.2831853f;
-
     SkPath path;
     path.moveTo(0.0f , 0.0f);
-	// for (int i = 1; i < 7; i++) {
-	// 	SkScalar theta = 3 * i * TAU / 7;
-	// 	path.lineTo(R * cos(theta), R * sin(theta));
-	// }
     path.lineTo(100.0f, 0.0f);
     path.lineTo(150.0f, 150.0f);
     path.lineTo(0.0f, 100.0f);
     path.lineTo(0.0f, 0.0f);
-	path.close();
+    path.close();
 
     SkPaint p;
     p.setAntiAlias(true);
     canvas->clear(SK_ColorWHITE);
-    //canvas->translate(0.5f * scale, 0.5f * scale); ;/
     canvas->drawPath(path, p);
 }
 
@@ -93,3 +84,4 @@ int main(int argc, char **argv) {
 	raster(200, 200, &draw, "./pic.png");
 	return 0;
 }
+
